@@ -1,0 +1,30 @@
+state={
+	id=1487
+	name="STATE_1487" # Aguscalentes
+
+	manpower = 1280675
+	
+	state_category = large_suburb
+	
+	resources = {
+		steel = 1
+	}
+
+	history={
+		owner = MEX
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+		}
+		add_core_of = MEX
+		#victory_points = {
+		#	13089 20
+		#}
+
+	}
+
+	provinces={
+		14997 14998 14999 15000
+	}
+	
+}

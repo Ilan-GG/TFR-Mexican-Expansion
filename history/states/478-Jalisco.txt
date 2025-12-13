@@ -1,0 +1,33 @@
+
+state={
+	id=478
+	name="STATE_478" # Jalisco
+	manpower = 15470875
+	
+	state_category = large_suburb
+	
+	resources = {
+		steel = 5
+	}
+
+	history={
+		owner = MEX
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 4
+			arms_factory = 1
+			dockyard = 1
+			air_base = 1
+		}
+		add_core_of = MEX
+		victory_points = {
+			13089 20
+		}
+
+	}
+
+	provinces={
+		2051 12873 13089 14982 14983 14984 14985 14986 14987 14988 14989 14990 14991
+	}
+	
+}

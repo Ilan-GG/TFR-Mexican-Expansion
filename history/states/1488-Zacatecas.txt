@@ -1,0 +1,31 @@
+state={
+	id=1488
+	name="STATE_1488" # Zacatecas
+
+	manpower = 1280675
+	
+	state_category = large_town
+	
+	resources = {
+		steel = 6
+	}
+
+	history={
+		owner = MEX
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+		}
+		add_core_of = MEX
+		#victory_points = {
+		#	13089 20
+		#}
+
+	}
+
+	provinces={
+		5052 10172 12804 10738
+
+	}
+	
+}

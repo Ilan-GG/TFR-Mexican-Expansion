@@ -1,0 +1,33 @@
+state={
+	id=1486
+	name="STATE_1486" # Guadalajara
+	manpower = 7470875
+	
+	state_category = large_suburb
+	
+	resources = {
+		steel = 1
+	}
+
+	history={
+		owner = MEX
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 4
+			arms_factory = 1
+			dockyard = 1
+			air_base = 1
+		}
+		add_core_of = MEX
+		#victory_points = {
+		#	13089 20
+		#}
+
+	}
+
+	provinces={
+		14992 14993 14994 14995 14996
+
+	}
+	
+}
