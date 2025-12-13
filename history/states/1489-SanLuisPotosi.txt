@@ -1,0 +1,35 @@
+state={
+	id=1489
+	name="STATE_1489" # San Luis Potosi
+
+	manpower = 1280675
+	
+	state_category = large_town
+	
+	resources = {
+	}
+
+	history={
+		owner = MEX
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+		}
+		add_core_of = MEX
+		victory_points = {
+			15009 8
+		}
+
+	}
+
+	provinces={
+		1952 4956
+
+		15006
+		15007
+		15008
+		15009
+
+	}
+	
+}

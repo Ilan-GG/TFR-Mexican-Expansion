@@ -1,0 +1,148 @@
+guiTypes = {
+    containerWindowType = {
+        name = "mainmenu_dlc_ownership"
+        position = { x = 0 y = 0 }
+        size = { width = 400 height = 500 }
+        
+        # Background/container for DLC ownership display
+        quadTextureSpriteType = {
+            name = "background"
+            spriteType = "GFX_mainmenu_background"
+            position = { x = 0 y = 0 }
+            size = { width = 400 height = 500 }
+            color = { 20 20 20 200 }
+        }
+        
+        containerWindowType = {
+            name = "owned_dlc_container"
+            position = { x = 10 y = 40 }
+            size = { width = 380 height = 200 }
+        }
+        
+        containerWindowType = {
+            name = "unowned_dlc_container" 
+            position = { x = 10 y = 260 }
+            size = { width = 380 height = 200 }
+        }
+        
+        textboxType = {
+            name = "title_owned"
+            position = { x = 10 y = 10 }
+            size = { width = 180 height = 25 }
+            text = "OWNED_DLC"
+            font = "malgun_goth_16"
+            border = true
+        }
+        
+        textboxType = {
+            name = "title_unowned"
+            position = { x = 10 y = 230 }
+            size = { width = 180 height = 25 }
+            text = "AVAILABLE_DLC"
+            font = "malgun_goth_16"
+            border = true
+        }
+    }
+
+    containerWindowType = {
+        name = "owned_dlc_item"
+        position = { x = 0 y = 0 }
+        size = { width = 360 height = 30 }
+        
+        iconType = {
+            name = "dlc_icon"
+            spriteType = "GFX_idea_generic_idea"
+            position = { x = 5 y = 3 }
+            size = { width = 24 height = 24 }
+        }
+        
+        textboxType = {
+            name = "dlc_name"
+            position = { x = 35 y = 0 }
+            size = { width = 200 height = 30 }
+            text = "DLC_NAME"
+            font = "malgun_goth_12"
+            format = left
+        }
+        
+        buttonType = {
+            name = "dlc_button"
+            position = { x = 240 y = 5 }
+            size = { width = 115 height = 20 }
+            quadTextureSprite = "GFX_button_normal"
+            quadTextureSpriteOver = "GFX_button_over"
+            quadTextureSpritePressed = "GFX_button_pressed"
+            
+            text = "BUTTON_TEXT"
+            font = "malgun_goth_12"
+            buttonText = "MORE_INFO"
+        }
+        
+        # Optional: installed indicator
+        iconType = {
+            name = "installed_icon"
+            spriteType = "GFX_checkmark"
+            position = { x = 330 y = 5 }
+            size = { width = 20 height = 20 }
+            visible = yes
+        }
+    }
+
+    containerWindowType = {
+        name = "unowned_dlc_item"
+        position = { x = 0 y = 0 }
+        size = { width = 360 height = 30 }
+        
+        iconType = {
+            name = "dlc_icon"
+            spriteType = "GFX_idea_unknown"
+            position = { x = 5 y = 3 }
+            size = { width = 24 height = 24 }
+        }
+        
+        textboxType = {
+            name = "dlc_name"
+            position = { x = 35 y = 0 }
+            size = { width = 200 height = 30 }
+            text = "DLC_NAME"
+            font = "malgun_goth_12"
+            format = left
+        }
+        
+        buttonType = {
+            name = "purchase_button"
+            position = { x = 240 y = 5 }
+            size = { width = 115 height = 20 }
+            quadTextureSprite = "GFX_button_normal"
+            quadTextureSpriteOver = "GFX_button_over" 
+            quadTextureSpritePressed = "GFX_button_pressed"
+            
+            text = "BUTTON_TEXT"
+            font = "malgun_goth_12"
+            buttonText = "PURCHASE"
+        }
+        
+        # Optional: locked indicator
+        iconType = {
+            name = "locked_icon"
+            spriteType = "GFX_lock_icon"
+            position = { x = 330 y = 5 }
+            size = { width = 20 height = 20 }
+            visible = yes
+        }
+    }
+
+	containerWindowType = {
+        name = "mainmenu_panel_upperleft"
+        position = { x = 0 y = 0 }
+        size = { width = 400 height = 200 }
+        
+        textboxType = {
+            name = "version_info"
+            position = { x = 10 y = 180 }
+            size = { width = 380 height = 20 }
+            text = "Game Version Info"
+            font = "malgun_goth_12"
+        }
+    }
+}
