@@ -1,0 +1,46 @@
+
+state={
+	id=474
+	name="STATE_474"
+	manpower = 1080000
+	
+	state_category = rural
+	
+	resources = {
+		rubber = 2
+	}
+
+	history={
+		owner = MEX
+		victory_points = { 15068 7 } #Merida
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+			4904 = {
+				naval_base = 2
+			}
+			4965 = {
+				naval_base = 3
+			}
+		}
+		add_core_of = MEX
+	}
+
+	provinces={
+		4904 4965 12715 
+		
+		# New Provinces
+		15068 # Merida
+		15069
+		15070
+		15071 # Cancun
+		15072
+		15073
+		15074
+		15075
+		15076
+		15077
+
+	}
+	
+}

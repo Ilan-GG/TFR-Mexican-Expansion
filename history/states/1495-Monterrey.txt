@@ -1,0 +1,33 @@
+
+state={
+	id=1495
+	name="STATE_1495"
+	manpower = 2345678
+	
+	state_category = metropolis
+	
+	resources = {
+		
+	}
+
+	history={
+		owner = MEX
+		# victory_points = { 12712 5 } #Oaxaca
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+			
+		}
+
+		add_core_of = MEX
+	}
+
+	provinces={
+		15045
+		15046
+		15047
+		15048
+
+	}
+	
+}

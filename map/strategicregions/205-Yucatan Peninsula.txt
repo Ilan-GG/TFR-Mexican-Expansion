@@ -3,6 +3,38 @@ strategic_region={
 	name="STRATEGICREGION_205"
 	provinces={
 		1900 2021 4904 4965 8236 10773 10889 12712 12715 12753 12867 
+
+		# Oaxaca 
+		15058
+		15059
+		15060
+		15061
+
+		# Southern Veracruz
+		15062
+
+		# Chiapas
+		15063
+		15064
+		15065
+		15066
+
+		# Tabasco
+		15067
+
+		# Yucatan State
+		15068 # Merida
+		15069
+		15070
+		15071 # Cancun
+		15072
+		15073
+		15074
+		15075
+		15076
+		15077
+
+
 	}
 	weather={
 		period={

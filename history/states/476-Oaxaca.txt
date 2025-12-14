@@ -12,7 +12,7 @@ state={
 
 	history={
 		owner = MEX
-		victory_points = { 12712 5 } #Oaxaca
+		victory_points = { 15061 5 } #Oaxaca
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
@@ -23,6 +23,12 @@ state={
 
 	provinces={
 		8236 10773 12712
+
+		15058
+		15059
+		15060
+		15061
+
 	}
 	
 }
