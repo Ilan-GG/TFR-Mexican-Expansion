@@ -9,4 +9,5 @@ Hello, this is my personal aportation to the incredible Universe of The Fire Ris
 Playable Content for pre-Collapse Mexico, and content for the Mexican Civil War for the Federal Government with 2/3 different paths with some subpaths within them.
 
 - Version 0.2
-COntent Expansion to the EZLN Faction and the Opposition Parties inside the Federal Government
+
+Content Expansion to the EZLN Faction and the Opposition Parties inside the Federal Government
