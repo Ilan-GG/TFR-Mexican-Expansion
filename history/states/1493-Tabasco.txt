@@ -1,0 +1,28 @@
+
+state={
+	id=1493
+	name="STATE_1493"
+	manpower = 5663331
+	
+	state_category = village
+	
+	resources = {
+		
+	}
+
+	history={
+		owner = MEX
+		# victory_points = { 12712 5 } #Oaxaca
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+			
+		}
+		add_core_of = MEX
+	}
+
+	provinces={
+		2021 12867
+	}
+	
+}

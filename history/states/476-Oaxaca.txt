@@ -17,15 +17,12 @@ state={
 			infrastructure = 2
 			industrial_complex = 1
 			air_base = 1
-			10889 = {
-				naval_base = 2
-			}
 		}
 		add_core_of = MEX
 	}
 
 	provinces={
-		2021 8236 10773 10889 12712 12867
+		8236 10773 12712
 	}
 	
 }
