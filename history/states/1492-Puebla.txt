@@ -1,0 +1,32 @@
+
+state={
+	id=1492
+	name="STATE_1492"
+	manpower = 2598311
+	
+	state_category = conurbation
+	
+	resources = {
+	
+	}
+
+	history={
+		owner = MEX
+		# victory_points = { 10730 12 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+			power_plant = 2
+			8032 = {
+				naval_base = 3
+			}
+		}
+		add_core_of = MEX
+	}
+
+	provinces={
+		8089
+	}
+	
+}

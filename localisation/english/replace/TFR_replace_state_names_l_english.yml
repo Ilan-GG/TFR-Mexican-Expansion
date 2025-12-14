@@ -1509,7 +1509,13 @@
  STATE_1483: "Satakunta"
  STATE_1484: "Uusimaa"
  STATE_1485: "Varsinais-Suomi"
+
+  #Added TFR Mexico
+
  STATE_1486: "Guadalajara"
  STATE_1487: "Aguascalientes"
  STATE_1488: "Zacatecas"
  STATE_1489: "San Luis Potosi"
+ STATE_1490: "Michoacan"
+ STATE_1491: "State of Mexico"
+ STATE_1492: "Puebla"

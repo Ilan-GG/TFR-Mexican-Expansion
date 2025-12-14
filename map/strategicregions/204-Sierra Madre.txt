@@ -18,6 +18,7 @@ strategic_region={
 		15005
 
 	}
+	
 	weather={
 		period={
 			between={ 0.0 30.0 }
