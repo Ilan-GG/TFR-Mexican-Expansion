@@ -2,7 +2,7 @@
 state={
 	id=1493
 	name="STATE_1493"
-	manpower = 5663331
+	manpower = 2461555
 	
 	state_category = village
 	
@@ -12,10 +12,9 @@ state={
 
 	history={
 		owner = MEX
-		# victory_points = { 12712 5 } #Oaxaca
+		victory_points = { 12867 2 } #Villahermosa
 		buildings = {
-			infrastructure = 1
-			air_base = 1
+			infrastructure = 0
 			
 		}
 		add_core_of = MEX

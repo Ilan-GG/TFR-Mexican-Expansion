@@ -2,7 +2,7 @@
 state={
 	id=478
 	name="STATE_478" # Jalisco
-	manpower = 15470875
+	manpower = 3710298
 	
 	state_category = large_suburb
 	
@@ -20,9 +20,6 @@ state={
 			air_base = 1
 		}
 		add_core_of = MEX
-		victory_points = {
-			13089 20
-		}
 
 	}
 

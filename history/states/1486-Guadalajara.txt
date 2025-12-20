@@ -1,27 +1,27 @@
 state={
 	id=1486
 	name="STATE_1486" # Guadalajara
-	manpower = 7470875
+	manpower = 5110617
 	
 	state_category = large_suburb
 	
 	resources = {
-		steel = 1
+		steel = 2
 	}
 
 	history={
 		owner = MEX
 		buildings = {
 			infrastructure = 4
-			industrial_complex = 4
+			industrial_complex = 3
 			arms_factory = 1
-			dockyard = 1
 			air_base = 1
 		}
 		add_core_of = MEX
-		#victory_points = {
-		#	13089 20
-		#}
+		victory_points = { 14992 20 } #Guadalajara
+		victory_points = { 14995 5 } #Zapopan
+		victory_points = { 14994 5 } #Tonala
+		victory_points = { 14996 5 } #Tlaquepaque
 
 	}
 

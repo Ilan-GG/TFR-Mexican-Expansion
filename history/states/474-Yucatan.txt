@@ -2,7 +2,7 @@
 state={
 	id=474
 	name="STATE_474"
-	manpower = 1080000
+	manpower = 5499190
 	
 	state_category = rural
 	
@@ -13,13 +13,14 @@ state={
 	history={
 		owner = MEX
 		victory_points = { 15068 7 } #Merida
+		victory_points = { 15071 4 } #Cancun
 		buildings = {
 			infrastructure = 1
 			air_base = 1
-			4904 = {
+			15068 = {
 				naval_base = 2
 			}
-			4965 = {
+			15071 = {
 				naval_base = 3
 			}
 		}

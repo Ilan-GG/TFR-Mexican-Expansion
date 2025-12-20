@@ -16,10 +16,7 @@ state={
 			industrial_complex = 2
 		}
 		add_core_of = MEX
-		victory_points = {
-			15009 8
-		}
-
+		victory_points = { 15006 10 }
 	}
 
 	provinces={

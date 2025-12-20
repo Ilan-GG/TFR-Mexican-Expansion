@@ -2,7 +2,7 @@
 state={
 	id=475
 	name="STATE_475"
-	manpower = 3105874
+	manpower = 6028154
 	
 	state_category = rural
 	
@@ -11,11 +11,11 @@ state={
 	}
 
 	history={
-	victory_points = { 1900 1 } #Tuxtla Gutierrez
+	victory_points = { 15063 2 } #Tuxtla Gutierrez
 		owner = MEX
 		buildings = {
 			infrastructure = 1
-			air_base = 1
+			air_base = 0
 		}
 		add_core_of = MEX
 		add_core_of = ZAP
@@ -24,7 +24,7 @@ state={
 	provinces={
 		1900 12753
 
-		15063
+		15063 #Tuxtla
 		15064
 		15065
 		15066

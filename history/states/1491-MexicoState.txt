@@ -2,7 +2,7 @@
 state={
 	id=1491
 	name="STATE_1491"
-	manpower = 2598311
+	manpower = 17616018
 	
 	state_category = conurbation
 	
@@ -12,7 +12,7 @@ state={
 
 	history={
 		owner = MEX
-		# victory_points = { 10730 12 }
+		victory_points = { 15024 12 }
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1

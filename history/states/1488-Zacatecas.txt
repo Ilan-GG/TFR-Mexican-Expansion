@@ -2,9 +2,9 @@ state={
 	id=1488
 	name="STATE_1488" # Zacatecas
 
-	manpower = 1280675
+	manpower = 1698252
 	
-	state_category = large_town
+	state_category = town
 	
 	resources = {
 		steel = 6
@@ -17,9 +17,7 @@ state={
 			industrial_complex = 2
 		}
 		add_core_of = MEX
-		#victory_points = {
-		#	13089 20
-		#}
+		victory_points = { 15002 8 }
 
 	}
 

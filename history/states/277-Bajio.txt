@@ -1,7 +1,7 @@
 state = {
 	id = 277
 	name = "STATE_277"
-	manpower = 46024403
+	manpower = 12352631
 	state_category = conurbation
 	
 	resources = {
@@ -12,12 +12,14 @@ state = {
 	history = {
 		owner = MEX
 		add_core_of = MEX
-		victory_points = { 2008 12}
+		victory_points = { 15015 12} #Leon
+		victory_points = { 15018 8} #Queretaro
+		victory_points = { 15021 5} #Pachuca
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 5
 			arms_factory = 2
-			air_base = 5
+			air_base = 4
 			energy_farm = 1
 		}
 	}

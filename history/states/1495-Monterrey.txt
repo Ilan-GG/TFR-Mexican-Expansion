@@ -2,7 +2,7 @@
 state={
 	id=1495
 	name="STATE_1495"
-	manpower = 2345678
+	manpower = 5341177
 	
 	state_category = metropolis
 	
@@ -18,7 +18,8 @@ state={
 			air_base = 1
 			
 		}
-
+		victory_points = { 15046 20} #Monterrey
+		victory_points = { 15045 5 } #San Pedro
 		add_core_of = MEX
 	}
 

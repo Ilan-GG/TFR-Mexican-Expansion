@@ -2,22 +2,22 @@
 state={
 	id=1492
 	name="STATE_1492"
-	manpower = 2598311
+	manpower = 8419899
 	
 	state_category = conurbation
 	
 	resources = {
-	
+		steel = 8
 	}
 
 	history={
 		owner = MEX
-		# victory_points = { 10730 12 }
+		victory_points = { 15026 8 } #Tlaxcala
+		victory_points = { 15028 12 } # Puebla
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 1
-			air_base = 1
-			power_plant = 2
+			industrial_complex = 2
+			power_plant = 1
 			8032 = {
 				naval_base = 3
 			}

@@ -2,9 +2,9 @@
 state={
 	id=1494
 	name="STATE_1494"
-	manpower = 600000
+	manpower = 523289
 	
-	state_category = village
+	state_category = rural
 	
 	resources = {
 		
@@ -12,10 +12,9 @@ state={
 
 	history={
 		owner = MEX
-		# victory_points = { 12712 5 } #Oaxaca
+		victory_points = { 15062 2 } #coatzacoalcos
 		buildings = {
 			infrastructure = 1
-			air_base = 1
 			
 		}
 
@@ -27,7 +26,7 @@ state={
 
 	provinces={
 		10889
-		15062
+		15062 #Capital
 	}
 	
 }
