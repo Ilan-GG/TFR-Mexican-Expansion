@@ -1,0 +1,52 @@
+MEX_obrador_transformation_dynamic = {
+	icon = GFX_idea_MEX_amlo_revolution
+
+	enable = { 
+		tag = MEX
+	}
+
+	stability_factor = MEX_transformation_stability_factor_dv
+	political_power_gain = MEX_transformation_political_power_gain_dv
+	inflation_monthly = MEX_transformation_inflation_monthly_dv
+	consumer_goods_factor = MEX_transformation_consumer_goods_factor_dv
+
+	income_growth_factor = MEX_transformation_income_growth_factor_dv
+
+	society_development_monthly = MEX_transformation_society_development_monthly_dv
+	poverty_development_monthly = MEX_transformation_academic_development_monthly_dv
+	academic_development_monthly = MEX_transformation_academic_development_monthly_dv
+	
+}
+
+MEX_military_institution_dynamic = {
+	icon = GFX_idea_GER_militarism # Change into something original
+	
+	enable = { 
+		tag = MEX
+	}
+
+	military_development_monthly = MEX_mi_military_development_monthly_dv
+
+	battalion_upkeep_factor = MEX_mi_battalion_upkeep_factor_dv
+
+	production_speed_arms_factory_factor = MEX_mi_production_speed_arms_factory_factor_dv
+
+	mobilization_speed = MEX_mi_mobilization_speed_dv
+	war_support_factor = MEX_mi_war_support_factor_dv
+	army_attack_factor = MEX_mi_army_attack_factor_dv
+	army_defence_factor = MEX_mi_army_defence_factor_dv
+	army_core_defence_factor = MEX_mi_army_core_defence_factor_dv
+
+	army_morale_factor = MEX_mi_army_morale_factor_dv
+
+	resistance_growth = MEX_mi_resistance_growth_dv
+}
+
+MEX_the_last_revolution = {
+	# icon =
+	
+	enable = { 
+		tag = MEX
+	}
+	
+}

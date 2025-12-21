@@ -1,0 +1,760 @@
+MEX_mexican_civil_war_category = {
+	MEX_reunify_decision = {
+		icon = generic_ignite_civil_war
+		fire_only_once = yes
+		visible = {
+			MEX_is_civil_war_faction = yes
+		}
+		available = {
+			has_war = no
+			NOT = {
+				tag = CAS
+			}
+		}
+		complete_effect = {
+			country_event = mexico.12
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	CAS_reunify_decision = {
+		icon = generic_ignite_civil_war
+		fire_only_once = yes
+		visible = {
+			MEX_is_civil_war_faction = yes
+		}
+		available = {
+			has_war = no
+			tag = CAS
+			NOT = {
+				country_exists = MEX
+			}
+		}
+		complete_effect = {
+			release = MEX
+			news_event = {
+				id = news.359
+				hours = 6
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}
+
+MEX_mexican_struggle_category = {
+
+	MEX_new_caudillo_century = {
+		icon = generic_ignite_civil_war
+		cancel_if_not_visible = yes
+
+		priority = 100
+
+		visible = {
+			AND = {
+				has_completed_focus = MEX_mexican_hell
+			}
+		}
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		activation = { has_completed_focus = MEX_mexican_hell }
+
+		days_mission_timeout = 200
+		is_good = no
+
+		timeout_effect = {
+			country_event = mexico.1
+		}
+	}
+	
+	MEX_cartel_hell_mission = {
+		icon = generic_ignite_civil_war
+		cancel_if_not_visible = yes
+
+		priority = 80
+
+		visible = {
+			AND = {
+				has_completed_focus = MEX_mexican_hell
+				NOT = { has_country_flag = MEX_colapse_flag }
+			}
+		}
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+
+		activation = {
+			has_completed_focus = MEX_mexican_hell
+		}
+
+		days_mission_timeout = 50
+		is_good = no
+
+		timeout_effect = {
+			MEX_worsen_cartel_presence = yes
+			activate_mission = MEX_cartel_hell_mission
+
+			add_days_mission_timeout = {
+				mission = MEX_new_caudillo_century
+				days = -20
+			}
+		}
+
+	}
+
+	MEX_raid_cartel_sinaloa = {
+		icon = generic_ignite_civil_war
+		cancel_if_not_visible = yes
+
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			has_completed_focus = MEX_massive_cartel_raids
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 120
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 14
+
+		complete_effect = {
+			add_stability = 0.015
+		}
+
+		remove_effect = {
+
+			add_days_mission_timeout = {
+				mission = MEX_cartel_hell_mission
+				days = 30
+			}
+			custom_effect_tooltip = tooltip_white_line
+			effect_tooltip = {
+				CDJ = {
+					add_timed_idea = {
+						idea = generic_cartel_weaken_force
+						days = 90
+					}
+				}
+			}
+		}
+	}
+	MEX_raid_cjng = {
+		icon = generic_ignite_civil_war
+		cancel_if_not_visible = yes
+
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			has_completed_focus = MEX_massive_cartel_raids
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 120
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 14
+
+		complete_effect = {
+			add_stability = 0.015
+		}
+
+		remove_effect = {
+
+			add_days_mission_timeout = {
+				mission = MEX_cartel_hell_mission
+				days = 30
+			}
+
+			custom_effect_tooltip = tooltip_white_line
+			effect_tooltip = {
+				CDS = {
+					add_timed_idea = {
+						idea = generic_cartel_weaken_force
+						days = 90
+					}
+				}
+			}
+		}
+	}
+	MEX_raid_cdg = {
+		icon = generic_ignite_civil_war
+		cancel_if_not_visible = yes
+
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			has_completed_focus = MEX_massive_cartel_raids
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 120
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 14
+
+		complete_effect = {
+			add_stability = 0.015
+		}
+
+		remove_effect = {
+
+			add_days_mission_timeout = {
+				mission = MEX_cartel_hell_mission
+				days = 30
+			}
+
+			custom_effect_tooltip = tooltip_white_line
+			effect_tooltip = {
+				CUG = {
+					add_timed_idea = {
+						idea = generic_cartel_weaken_force
+						days = 90
+					}
+				}
+			}
+		}
+	}
+
+	MEX_covid_worsening = {
+
+		icon = generic_coronavirus
+		cancel_if_not_visible = yes
+		priority = 10
+
+		visible = {
+			AND = {
+				has_country_flag = MEX_covid_reached_mexico
+				NOT = {has_country_flag = MEX_covid_over}
+			}
+		}
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		activation = {
+			always = no
+		}
+
+		days_mission_timeout = 50
+		timeout_effect = {
+			if = {
+				limit = {
+					OR = {
+						has_idea = lower_covid_cases
+						has_idea = low_covid_cases
+						has_idea = medium_covid_cases
+						has_idea = high_covid_cases
+						has_idea = higher_covid_cases
+					} 
+				}
+				activate_mission = MEX_covid_worsening
+				increase_corona = yes
+			}
+			else = {
+				add_stability = -0.05
+			}
+		}
+
+		is_good = no 
+	}
+
+	MEX_business_adaptations = {
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			AND = {
+				has_completed_focus = MEX_sanitary_emergency
+				NOT = { has_country_flag = MEX_covid_over }
+			}
+		}
+		available = {
+			AND = {
+				OR = {
+					has_idea = low_covid_cases
+					has_idea = medium_covid_cases
+					has_idea = high_covid_cases
+					has_idea = higher_covid_cases
+				}
+				has_completed_focus = MEX_covid_economics
+			}
+		}
+		ai_will_do = {
+			base = 120
+		}
+		fire_only_once = no
+		cost = 20
+		days_remove = 35
+		days_re_enable = 50
+		cancel_if_not_visible = yes
+		complete_effect = {
+			# Immediate Effect
+		}
+		remove_effect = {
+			add_stability = 0.02
+		}
+		modifier = {
+			income_growth_factor = 0.10
+			business_value_factor = 0.15
+			stability_weekly_factor = 0.005
+		}
+	}
+
+	MEX_deploy_vaccines = {
+		icon = generic_vaccine
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			AND = {
+				has_completed_focus = MEX_vaccine_campaign
+				NOT = { has_country_flag = MEX_covid_over }
+			}
+		}
+		available = {
+			OR = {
+				has_idea = low_covid_cases
+				has_idea = medium_covid_cases
+				has_idea = high_covid_cases
+				has_idea = higher_covid_cases
+			}
+		}
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		cost = 80
+		days_remove = 70
+		cancel_if_not_visible = yes
+		complete_effect = {
+			# Immediate Effect
+		}
+		remove_effect = {
+			add_stability = 0.10
+			custom_effect_tooltip = MEX_covid_is_over_tt
+			set_country_flag = MEX_covid_over
+			remove_mission = MEX_covid_worsening
+			hidden_effect = {
+				remove_ideas = low_covid_cases
+				remove_ideas = medium_covid_cases
+				remove_ideas = high_covid_cases
+				remove_ideas = higher_covid_cases
+			}
+		}
+	}
+
+	MEX_feminist_protest_mission = {
+		# icon =
+		cancel_if_not_visible = yes
+		priority = 6
+
+		visible = {
+			has_country_flag = MEX_feminist_protests
+			NOT = { has_country_flag = MEX_feminist_appeased }
+		}
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		activation = {
+			always = no
+		}
+
+		days_mission_timeout = 70
+		timeout_effect = {
+			add_stability = -0.03
+
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.025
+			}
+
+			custom_effect_tooltip = MEX_feminist_protests_tt
+
+			hidden_effect = {
+				activate_mission = MEX_feminist_protest_mission
+			}
+		}
+
+		is_good = no 
+	}
+
+	MEX_legislative_reforms = {
+		# icon =
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			has_completed_focus = MEX_feminicide_reforms
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		cost = 20
+		days_remove = 28
+		days_re_enable = 50
+		cancel_if_not_visible = yes
+		complete_effect = {
+			add_stability = 0.05
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = society_development_var_temp
+				value = 0.10
+			}
+			add_society_development = yes
+
+			add_days_mission_timeout = {
+				mission = MEX_feminist_protest_mission
+				days = 30
+			}
+
+			hidden_effect = {
+				set_country_flag = MEX_legislative_reforms_done
+			}
+		}
+
+	}
+
+	MEX_push_olimpia_law = {
+		# icon =
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			has_country_flag = MEX_legislative_reforms_done
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = yes
+		cost = 35
+		days_remove = 70
+		cancel_if_not_visible = yes
+		complete_effect = {
+			add_stability = 0.05
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = society_development_var_temp
+				value = 0.10
+			}
+			add_society_development = yes
+
+			add_days_mission_timeout = {
+				mission = MEX_feminist_protest_mission
+				days = 30
+			}
+
+			hidden_effect = {
+				set_country_flag = MEX_olimpia_law_pushed
+			}
+		}
+
+	}
+
+	MEX_benito_juarez_scholarships = {
+		# icon =
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			has_completed_focus = MEX_benito_scholarships
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 25
+		}
+		fire_only_once = no
+		cost = 25
+		days_remove = 35
+		days_re_enable = 14
+		cancel_if_not_visible = yes
+		modifier = {
+			personal_expense_factor = -0.05
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = academic_development_var_temp
+				value = 0.12
+			}
+			add_academic_development = yes
+
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.02
+			}
+		}
+	}
+
+	MEX_youth_building_the_future = {
+		# icon =
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			has_completed_focus = MEX_youth_building_future
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 25
+		}
+		fire_only_once = no
+		cost = 25
+		days_remove = 35
+		days_re_enable = 14
+		cancel_if_not_visible = yes
+		modifier = {
+			personal_expense_factor = -0.05
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.08
+			}
+			add_poverty_development = yes
+
+			set_temp_variable = {
+				var = industrial_development_var_temp
+				value = 0.08
+			}
+			add_industrial_development = yes
+
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.015
+			}
+		}
+	}
+
+	MEX_sowing_life_program = {
+		# icon =
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			has_completed_focus = MEX_sowing_life
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 25
+		}
+		fire_only_once = no
+		cost = 25
+		days_remove = 35
+		days_re_enable = 14
+		cancel_if_not_visible = yes
+		modifier = {
+			society_development_monthly = 0.01
+			personal_expense_factor = -0.05
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.08
+			}
+			add_poverty_development = yes
+
+			set_temp_variable = {
+				var = farming_development_var_temp
+				value = 0.08
+			}
+			add_farming_development = yes
+
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.01
+			}
+		}
+	}
+
+	MEX_pension_expansion = {
+		# icon =
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			has_completed_focus = MEX_pensions_old_age
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 25
+		}
+		fire_only_once = no
+		cost = 25
+		days_remove = 35
+		days_re_enable = 14
+		cancel_if_not_visible = yes
+		modifier = {
+			personal_expense_factor = -0.05
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.08
+			}
+			add_poverty_development = yes
+
+			set_temp_variable = {
+				var = farming_development_var_temp
+				value = 0.08
+			}
+			add_farming_development = yes
+
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.01
+			}
+		}
+	}
+
+	MEX_working_mothers_program = {
+		# icon =
+		allowed = {
+			tag = MEX
+		}
+		visible = {
+			has_completed_focus = MEX_working_mothers
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 25
+		}
+		fire_only_once = no
+		cost = 25
+		days_remove = 35
+		days_re_enable = 14
+		cancel_if_not_visible = yes
+		modifier = {
+			personal_expense_factor = -0.05
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.05
+			}
+			add_poverty_development = yes
+
+			set_temp_variable = {
+				var = society_development_var_temp
+				value = 0.10
+			}
+			add_society_development = yes
+
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.01
+			}
+
+			if = {
+				limit = {
+					has_active_mission = MEX_feminist_protest_mission
+				}
+				add_days_mission_timeout = {
+					mission = MEX_feminist_protest_mission
+					days = 30
+				}
+			}
+		}
+	}
+
+}
+
+MEX_debug_decisions_category = {
+
+	MEX_load_initial_tree_debug = {
+		allowed = {
+			original_tag = MEX
+		}
+		visible = {
+			NOT = { has_focus_tree = MEX_initial_tree }
+		}
+
+		complete_effect = {
+			clr_country_flag = MEX_american_civil_war_tree_flag
+			clr_country_flag = MEX_collapse_tree_flag
+			clr_country_flag = MEX_reunification_tree_flag
+
+			load_focus_tree = {
+				tree = MEX_initial_tree
+				keep_completed = yes
+			}
+
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	MEX_load_american_civil_war_tree_debug = {
+		allowed = {
+			original_tag = MEX
+		}
+		visible = {
+			NOT = { 
+				has_focus_tree = MEX_post_acw_tree 
+				has_country_flag = MEX_american_civil_war_tree_flag
+			}
+		}
+
+		complete_effect = {
+			set_country_flag = MEX_american_civil_war_tree_flag
+
+			clr_country_flag = MEX_collapse_tree_flag
+			clr_country_flag = MEX_reunification_tree_flag
+
+			load_focus_tree = {
+				tree = MEX_post_acw_tree 
+				keep_completed = yes
+			}
+
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	MEX_allow_hell_branch = {
+		allowed = {
+			original_tag = MEX
+		}
+		visible = {
+			has_focus_tree = MEX_post_acw_tree
+		}
+
+		complete_effect = {
+			set_country_flag = MEX_cartel_activation
+
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+}

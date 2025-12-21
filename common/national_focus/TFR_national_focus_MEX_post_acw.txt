@@ -1,0 +1,622 @@
+focus_tree = {
+    id = MEX_post_acw_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			original_tag = MEX
+			has_country_flag = MEX_american_civil_war_tree_flag
+			NOT = {
+				has_country_flag = MEX_collapse_tree_flag
+				has_country_flag = MEX_reunification_tree_flag
+			}
+		}
+	}
+
+	shared_focus = MEX_mexican_hell
+	shared_focus = MEX_solve_refugee_crisis
+
+#	___  ___          _       	 _               _   __      _             _____   __  _____ 
+#	|  \/  |         | |      	| |          _  | | / /     (_)           |_   _| /  ||  _  |
+#	| .  . | __ _  __| | ___  	| |__  _   _(_) | |/ /  __ _ _ ___  ___ _ __| |   `| || |/' |
+#	| |\/| |/ _` |/ _` |/ _ \ 	| '_ \| | | |   |    \ / _` | / __|/ _ \ '__| |    | ||  /| |
+#	| |  | | (_| | (_| |  __/ 	| |_) | |_| |_  | |\  \ (_| | \__ \  __/ | _| |_  _| |\ |_/ /
+#	\_|  |_/\__,_|\__,_|\___| 	|_.__/ \__, (_) \_| \_/\__,_|_|___/\___|_| \___/  \___/\___/ 
+#									    __/ |                                                
+#									    |___/                                                                                          
+
+    focus = {
+		id = MEX_dawn_of_a_century
+		icon = GFX_focus_MEX_dawn_of_a_century
+		x = 6
+		y = 0
+		cost = 2
+		ai_will_do = {
+			base = 100
+		}
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = MEX_salvage_economy
+		# icon = 
+
+		relative_position_id = MEX_dawn_of_a_century
+		prerequisite = {
+			focus = MEX_dawn_of_a_century
+		}
+
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 0
+		}
+		available = {
+			has_country_flag = MEX_refugee_crisis_activation
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MEX_economic_crisis_2
+				remove_idea = MEX_economic_crisis_3
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_protect_the_vulnerable
+		# icon = 
+
+		relative_position_id = MEX_dawn_of_a_century
+		prerequisite = {
+			focus = MEX_salvage_economy
+		}
+
+		x = -1
+		y = 2
+		cost = 5
+		ai_will_do = {
+			base = 0
+		}
+		available = {
+		}
+		completion_reward = {
+			MEX_protect_refugees = yes
+		}
+	}
+
+	focus = {
+		id = MEX_financial_bailouts
+		# icon = 
+
+		relative_position_id = MEX_dawn_of_a_century
+		prerequisite = {
+			focus = MEX_salvage_economy
+		}
+		
+		x = -3
+		y = 2
+		cost = 5
+		ai_will_do = {
+			base = 0
+		}
+		available = {
+		}
+		completion_reward = {
+			set_temp_variable = {
+				var = debt_var_temp
+				value = 240
+			}
+			add_debt = yes
+			swap_ideas = {
+				add_idea = MEX_economic_crisis_1
+				remove_idea = MEX_economic_crisis_2
+			}
+		}
+	}
+
+}
+
+shared_focus = {
+	id = MEX_solve_refugee_crisis
+	# icon = 
+	# Dummy Branch will disappear from 20 days into the focus tree
+	relative_position_id = MEX_dawn_of_a_century
+	prerequisite = {
+		focus = MEX_dawn_of_a_century
+	}
+
+	allow_branch = {
+		NOT = { has_country_flag = MEX_cartel_activation }
+	}
+	
+	x = 1
+	y = 1
+	cost = 5
+	ai_will_do = {
+		base = 0
+	}
+	available = {
+		NOT = { has_country_flag = MEX_cartel_activation }
+	}
+	completion_reward = {
+		MEX_protect_refugees = yes
+	}	
+}
+
+shared_focus = {
+	id = MEX_prepare_the_border
+	# icon = 
+
+	relative_position_id = MEX_dawn_of_a_century
+	prerequisite = {
+		focus = MEX_solve_refugee_crisis
+	}
+
+	x = 1
+	y = 2
+	cost = 5
+	ai_will_do = {
+		base = 0
+	}
+	available = {
+		NOT = { has_country_flag = MEX_cartel_activation }
+	}
+	completion_reward = {
+		if = {
+			has_limit = { has_idea = MEX_american_refugee_waves }
+			remove_idea = MEX_american_refugee_waves
+		} 
+		else = {
+			has_limit = { has_idea = MEX_american_refugee_waves_2 }
+			remove_idea = MEX_american_refugee_waves_2
+		}
+	}
+}
+
+shared_focus = {
+	id = MEX_mexican_hell
+	#icon = 
+	relative_position_id = MEX_dawn_of_a_century
+	x = 1 
+	y = 1
+	cost = 5
+	ai_will_do = {
+		base = 100
+	}
+	prerequisite = {
+		focus = MEX_dawn_of_a_century
+	}
+	allow_branch = {
+		has_country_flag = MEX_cartel_activation
+	}
+	available = {
+	}
+	completion_reward = {
+		add_stability = -0.05
+	}
+}
+
+shared_focus = {
+	id = MEX_militarize_border
+	#icon = 
+	relative_position_id = MEX_mexican_hell
+	x = 0
+	y = 1
+	cost = 5
+	ai_will_do = {
+		base = 100
+	}
+	prerequisite = {
+		focus = MEX_mexican_hell
+	}
+	available = {
+	}
+	completion_reward = {
+
+		effect_tooltip = {
+			add_ideas = MEX_military_institution_dummy
+		}
+
+		custom_effect_tooltip = tooltip_white_line
+		# state_id = {
+		#		add_building_construction = {
+		#		type = bunker
+		#		level = 2
+		#		instant_build = yes
+		#		province = province_id
+		#
+		# 		add_building_construction = {
+		#		type = bunker
+		#		level = 2
+		#		instant_build = yes
+		#		province = province_id
+		#	}
+		# }
+
+		479 = {
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 5015
+			}
+		}
+
+		480 = {
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 2060
+			}
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 12811
+			}
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 2104
+			}
+		}
+
+		482 = {
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 12897
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 2037
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 8097
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 10809
+			}
+		}
+
+		483 = {
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 5071
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 8012
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 2069
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 12833
+			}
+		}
+
+		484 = {
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 12461
+			}
+		}
+
+		1135 = {
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 13934
+			}
+		}
+
+		
+
+		hidden_effect = {
+			add_dynamic_modifier = {
+				modifier = MEX_military_institution_dynamic
+			}
+
+			add_to_variable = {
+				var = MEX_mi_mobilization_speed_dv
+				value = 0.05
+			}	
+		}
+	}
+}
+
+
+shared_focus = {
+	id = MEX_ensure_military_loyalty
+	#icon = 
+	relative_position_id = MEX_militarize_border
+	x = -1
+	y = 1
+	cost = 5
+	ai_will_do = {
+		base = 100
+	}
+	prerequisite = {
+		focus = MEX_militarize_border
+	}
+	available = {
+	}
+	completion_reward = {
+		add_days_mission_timeout = {
+			mission = MEX_cartel_hell_mission
+			days = 30
+		}
+
+		custom_effect_tooltip = tooltip_white_line
+
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = MEX_military_institution_empty
+				add_idea = MEX_ensure_military_loyalty_dummy
+			}
+		}
+
+		hidden_effect = {
+			add_to_variable = {
+				var = MEX_mi_mobilization_speed_dv
+				value = 0.10
+			}
+			add_to_variable = {
+				var = MEX_mi_army_morale_factor_dv
+				value = 0.05
+			}
+			add_to_variable = {
+				var = MEX_mi_war_support_factor_dv
+				value = 0.10
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = MEX_prepare_worst
+	#icon = 
+	relative_position_id = MEX_ensure_military_loyalty
+	x = -2
+	y = 1
+	cost = 5
+	ai_will_do = {
+		base = 100
+	}
+	prerequisite = {
+		focus = MEX_ensure_military_loyalty
+	}
+	available = {
+	}
+	completion_reward = {
+		
+		effect_tooltip = {
+			swap_ideas = {
+				add_idea = MEX_prepare_worst_dummy
+				remove_idea = MEX_military_institution_empty
+			}
+		}
+
+		# custom_effect_tooltip = tooltip_white_line
+
+		1137 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		1454 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		hidden_effect = {
+			add_to_variable = {
+				var = MEX_mi_production_speed_arms_factory_factor_dv
+				value = 0.10
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = MEX_guerrilla_training
+	#icon = 
+	relative_position_id = MEX_ensure_military_loyalty
+	x = 0
+	y = 1
+	cost = 5
+	ai_will_do = {
+		base = 100
+	}
+	prerequisite = {
+		focus = MEX_ensure_military_loyalty
+	}
+	available = {
+	}
+	completion_reward = {
+		add_days_mission_timeout = {
+			mission = MEX_cartel_hell_mission
+			days = 15
+		}
+
+		custom_effect_tooltip = tooltip_white_line
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = MEX_military_institution_empty
+				add_idea = MEX_guerrilla_training_dummy
+			}
+		}
+
+		hidden_effect = {
+			add_to_variable = {
+				var = MEX_mi_army_core_defence_factor_dv
+				value = 0.10
+			}
+			add_to_variable = {
+				var = MEX_mi_army_attack_factor_dv
+				value = 0.05
+			}
+		}
+
+	}
+}
+
+shared_focus = {
+	id = MEX_free_military_bindings
+	#icon = 
+	relative_position_id = MEX_guerrilla_training
+	x = 0
+	y = 1
+	cost = 5
+	ai_will_do = {
+		base = 100
+	}
+	prerequisite = {
+		focus = MEX_guerrilla_training
+	}
+	available = {
+	}
+	completion_reward = {
+		add_days_mission_timeout = {
+			mission = MEX_new_caudillo_century
+			days = -30
+		}
+
+		custom_effect_tooltip = tooltip_white_line
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = MEX_military_institution_empty
+				add_idea = MEX_free_army_fist_dummy
+			}
+		}
+
+		hidden_effect = {
+			add_to_variable = {
+				var = MEX_mi_resistance_growth_on_our_occupied_states_dv
+				value = 0.15
+			}
+			add_to_variable = {
+				var = MEX_mi_army_attack_factor_dv
+				value = 0.075
+			}
+			add_to_variable = {
+				var = MEX_mi_war_support_factor_dv
+				value = -0.025
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = MEX_dismantle_people_trafficking
+	#icon = 
+	relative_position_id = MEX_militarize_border
+	x = 1
+	y = 1
+	cost = 5
+	ai_will_do = {
+		base = 100
+	}
+	prerequisite = {
+		focus = MEX_militarize_border
+	}
+	available = {
+	}
+	completion_reward = {
+		swap_ideas = {
+			add_idea = MEX_fighting_forced_missing_idea
+			remove_idea = MEX_forced_missing_idea
+		}
+	}
+}
+
+shared_focus = {
+	id = MEX_massive_cartel_raids
+	#icon = 
+	relative_position_id = MEX_dismantle_people_trafficking
+	x = 0
+	y = 1
+	cost = 5
+	ai_will_do = {
+		base = 100
+	}
+	prerequisite = {
+		focus = MEX_dismantle_people_trafficking
+	}
+	available = {
+	}
+	completion_reward = {
+		unlock_decision_tooltip = MEX_raid_cartel_sinaloa
+		unlock_decision_tooltip = MEX_raid_cjng
+		unlock_decision_tooltip = MEX_raid_cdg
+	}
+}
+
+shared_focus = {
+	id = MEX_operation_hell
+	#icon = 
+	relative_position_id = MEX_massive_cartel_raids
+	x = 0
+	y = 1
+	cost = 5
+	ai_will_do = {
+		base = 100
+	}
+	prerequisite = {
+		focus = MEX_massive_cartel_raids
+	}
+	available = {
+		OR = {
+			has_idea = MEX_cartel_presence_severe
+			has_idea = MEX_cartel_presence_major
+		}
+	}
+	completion_reward = {
+		remove_mission = MEX_new_caudillo_century
+	}
+}

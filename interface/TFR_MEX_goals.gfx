@@ -1,0 +1,133 @@
+spriteTypes = {
+
+	SpriteType = {
+		name = "GFX_focus_MEX_fourth_transformation"
+		texturefile = "gfx/interface/goals/MEX/MEX_fourth_transformation.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_together_doing_history"
+		texturefile = "gfx/interface/goals/MEX/GFX_focus_MEX_together_doing_history.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_against_amlo"
+		texturefile = "gfx/interface/goals/MEX/MEX_against_amlo.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_covid_response"
+		texturefile = "gfx/interface/goals/MEX/MEX_covid_response.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_finish_census"
+		texturefile = "gfx/interface/goals/MEX/MEX_finish_census.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_cancel_census"
+		texturefile = "gfx/interface/goals/MEX/MEX_cancel_census.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_sanitary_emergency"
+		texturefile = "gfx/interface/goals/MEX/MEX_sanitary_emergency.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_new_normality"
+		texturefile = "gfx/interface/goals/MEX/MEX_new_normality.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_vaccine_campaign"
+		texturefile = "gfx/interface/goals/MEX/MEX_vaccine_campaign.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_covid_economics"
+		texturefile = "gfx/interface/goals/MEX/MEX_covid_economics.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_adapt_education"
+		texturefile = "gfx/interface/goals/MEX/MEX_adapt_education.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_abrazos_no_balazos"
+		texturefile = "gfx/interface/goals/MEX/MEX_abrazos_no_balazos.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_save_the_youth"
+		texturefile = "gfx/interface/goals/MEX/MEX_save_the_youth.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_fight_narcoculture"
+		texturefile = "gfx/interface/goals/MEX/MEX_fight_narcoculture.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_no_more_hugs"
+		texturefile = "gfx/interface/goals/MEX/MEX_no_more_hugs.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_new_cartel_war"
+		texturefile = "gfx/interface/goals/MEX/MEX_new_cartel_war.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_militarized_security"
+		texturefile = "gfx/interface/goals/MEX/MEX_militarized_security.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_feminicide_problem"
+		texturefile = "gfx/interface/goals/MEX/MEX_feminicide_problem.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_olimpia_law"
+		texturefile = "gfx/interface/goals/MEX/MEX_olimpia_law.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_wellbeing_programs"
+		texturefile = "gfx/interface/goals/MEX/MEX_wellbeing_programs.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_universal_scholarships"
+		texturefile = "gfx/interface/goals/MEX/MEX_universal_scholarships.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_sowing_life"
+		texturefile = "gfx/interface/goals/MEX/MEX_sowing_life.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_working_mothers"
+		texturefile = "gfx/interface/goals/MEX/MEX_working_mothers.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_old_age_pensions"
+		texturefile = "gfx/interface/goals/MEX/MEX_old_age_pensions.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_jovenes_construyendo_futuro"
+		texturefile = "gfx/interface/goals/MEX/MEX_jovenes_construyendo_futuro.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_MEX_dawn_of_a_century"
+		texturefile = "gfx/interface/goals/MEX/MEX_dawn_of_a_century.png"
+	}
+
+}

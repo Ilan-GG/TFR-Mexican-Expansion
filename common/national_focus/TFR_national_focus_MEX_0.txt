@@ -1,0 +1,952 @@
+focus_tree = {
+    id = MEX_initial_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			original_tag = MEX
+			NOT = {
+				has_country_flag = MEX_american_civil_war_tree_flag
+				has_country_flag = MEX_collapse_tree_flag
+				has_country_flag = MEX_reunification_tree_flag
+			}
+		}
+	}
+
+#	___  ___          _       	 _               _   __      _             _____   __  _____ 
+#	|  \/  |         | |      	| |          _  | | / /     (_)           |_   _| /  ||  _  |
+#	| .  . | __ _  __| | ___  	| |__  _   _(_) | |/ /  __ _ _ ___  ___ _ __| |   `| || |/' |
+#	| |\/| |/ _` |/ _` |/ _ \ 	| '_ \| | | |   |    \ / _` | / __|/ _ \ '__| |    | ||  /| |
+#	| |  | | (_| | (_| |  __/ 	| |_) | |_| |_  | |\  \ (_| | \__ \  __/ | _| |_  _| |\ |_/ /
+#	\_|  |_/\__,_|\__,_|\___| 	|_.__/ \__, (_) \_| \_/\__,_|_|___/\___|_| \___/  \___/\___/ 
+#									    __/ |                                                
+#									    |___/                                                                                          
+
+    focus = {
+		id = MEX_fourth_transformation
+		icon = GFX_focus_MEX_fourth_transformation 
+		x = 0
+		y = 0
+		cost = 5
+		ai_will_do = {
+			base = 100
+		}
+		available = {
+		}
+		completion_reward = {
+			country_event = {
+				id = mexico.100
+			}
+		}
+	}
+
+#
+### POLITICAL BRANCHING 
+###########################################################################
+
+	focus = {
+		id = MEX_together_doing_history
+		relative_position_id = MEX_fourth_transformation
+
+		prerequisite = {
+			focus = MEX_fourth_transformation
+		}
+
+		mutually_exclusive = {
+			focus = MEX_against_amlo
+		}
+
+		allow_branch = {
+			NOT = { has_completed_focus = MEX_vamos_x_mexico }
+		}
+
+		icon = GFX_focus_MEX_together_doing_history
+		x = -3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 40
+		}
+		available = {
+
+		}
+		completion_reward = {
+			add_stability = 0.025
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+
+			custom_effect_tooltip = MEX_together_doing_history_tt
+		}
+	} 
+
+
+	focus = {
+		id = MEX_against_amlo
+		relative_position_id = MEX_fourth_transformation
+
+		prerequisite = {
+			focus = MEX_fourth_transformation
+		}
+
+		mutually_exclusive = {
+			focus = MEX_together_doing_history
+		}
+
+		allow_branch = {
+			NOT = { has_completed_focus = MEX_together_doing_history }
+		}
+
+		icon = GFX_focus_MEX_against_amlo 
+		x = 3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 90
+		}
+		available = {
+
+		}
+		completion_reward = {
+			add_stability = 0.025
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.10
+			}
+		}
+	}
+
+#
+### COVID FOCUSES
+###########################################################################
+
+	focus = {
+		id = MEX_covid_response
+		relative_position_id = MEX_together_doing_history
+
+		prerequisite = {
+			focus = MEX_together_doing_history
+		}
+		icon = GFX_focus_MEX_covid_response 
+		x = -6
+		y = 1
+		cost = 3
+		ai_will_do = {
+			base = 100
+		}
+		available = {
+			has_country_flag = MEX_covid_reached_mexico
+		}
+		completion_reward = {
+			add_days_mission_timeout = {
+				mission = MEX_covid_worsening
+				days = 21
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_continue_census
+		relative_position_id = MEX_covid_response
+
+		prerequisite = {
+			focus = MEX_covid_response
+		}
+		mutually_exclusive = {focus = MEX_cancel_census}
+		icon = GFX_focus_MEX_finish_census 
+		x = -1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			base = 100
+		}
+		available = {
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = MEX_national_census
+				days = 480
+			}
+			custom_effect_tooltip = MEX_national_census_tt
+
+			hidden_effect = {
+				country_event = {
+					id = mexico.104
+					days = 20
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_cancel_census
+		relative_position_id = MEX_covid_response
+
+		prerequisite = {
+			focus = MEX_covid_response
+		}
+		mutually_exclusive = {focus = MEX_continue_census}
+		icon = GFX_focus_MEX_cancel_census
+		x = 1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			base = 100
+		}
+		available = {
+		}
+		completion_reward = {
+			add_days_mission_timeout = {
+				mission = MEX_covid_worsening
+				days = 20
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_sanitary_emergency
+		relative_position_id = MEX_covid_response
+
+		prerequisite = {
+			focus = MEX_cancel_census
+			focus = MEX_continue_census
+		}
+		icon = GFX_focus_MEX_sanitary_emergency
+
+		x = 0
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			base = 100
+		}
+
+		available = {
+			OR = {
+				has_idea = low_covid_cases
+				has_idea = medium_covid_cases
+				has_idea = high_covid_cases
+				has_idea = higher_covid_cases
+			}
+		}
+
+		completion_reward = {
+			add_days_mission_timeout = {
+				mission = MEX_covid_worsening
+				days = 28
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.05
+			}
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = MEX_new_normality
+		relative_position_id = MEX_covid_response
+
+		prerequisite = {
+			focus = MEX_sanitary_emergency
+		}
+		icon = GFX_focus_MEX_new_normality
+
+		x = -1
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			base = 100
+		}
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = MEX_new_normality_idea
+				days = 200
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_adapt_education
+		relative_position_id = MEX_covid_response
+
+		prerequisite = {
+			focus = MEX_sanitary_emergency
+		}
+		icon = GFX_focus_MEX_adapt_education
+
+		x = 1
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			base = 100
+		}
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_days_mission_timeout = {
+				mission = MEX_covid_worsening
+				days = 35
+			}
+			add_political_power = 100
+
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.05
+			}
+		}
+	}
+
+	focus = {
+		id = MEX_vaccine_campaign
+		relative_position_id = MEX_covid_response
+
+		prerequisite = {
+			focus = MEX_new_normality
+			focus = MEX_adapt_education
+		}
+		icon = GFX_focus_MEX_vaccine_campaign
+
+		x = 0
+		y = 4
+		cost = 6
+
+		ai_will_do = {
+			base = 100
+		}
+
+		available = {
+			date > 2020.10.01
+		}
+
+		completion_reward = {
+			add_days_mission_timeout = {
+				mission = MEX_covid_worsening
+				days = 35
+			}
+			custom_effect_tooltip = MEX_vaccine_campaign_tt
+
+			unlock_decision_tooltip = MEX_deploy_vaccines
+		}
+	}
+
+	focus = {
+		id = MEX_covid_economics
+		relative_position_id = MEX_covid_response
+
+		prerequisite = {
+			focus = MEX_new_normality
+		}
+		icon = GFX_focus_MEX_covid_economics
+
+		x = -1
+		y = 5
+		cost = 5
+
+		ai_will_do = {
+			base = 100
+		}
+
+		available = {
+			has_idea = MEX_new_normality_idea
+		}
+
+		completion_reward = {
+			modify_timed_idea = {
+				idea = MEX_new_normality_idea
+				days = 180
+			}
+			add_stability = 0.05
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.10
+			}
+			add_poverty_development = yes
+
+			every_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_island_state = no
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 2
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			unlock_decision_tooltip = MEX_business_adaptations
+		}
+	}
+#
+########## SECURITY BRANCH
+###########################################################################
+
+	focus = {
+		id = MEX_hugs_not_bullets
+		relative_position_id = MEX_together_doing_history
+
+		prerequisite = {
+			focus = MEX_together_doing_history
+		}
+
+		mutually_exclusive = {
+			focus = MEX_end_hugs
+		}
+
+		icon = GFX_focus_MEX_abrazos_no_balazos 
+
+		x = -2
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			base = 80
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = { MEX_hugs_not_bullets_1 }
+
+			swap_ideas = {
+				add_idea = low_police
+				remove_idea = medium_police
+			}
+
+			
+		}
+	}
+
+	focus = {
+		id = MEX_end_hugs
+		relative_position_id = MEX_hugs_not_bullets
+
+		icon = GFX_focus_MEX_no_more_hugs
+
+		prerequisite = {
+			focus = MEX_together_doing_history
+		}
+
+		mutually_exclusive = {
+			focus = MEX_hugs_not_bullets
+		}
+
+		mutually_exclusive = {
+			
+		}
+
+		# icon = 
+
+		x = 2
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			base = 80
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = { MEX_war_against_cartels_1 }
+
+			swap_ideas = {
+				add_idea = high_police
+				remove_idea = medium_police
+			}
+			
+			
+		}
+	}
+
+	focus = {
+		id = MEX_feminicide_reforms
+		relative_position_id = MEX_hugs_not_bullets
+
+		prerequisite = {
+			focus = MEX_end_hugs
+			focus = MEX_hugs_not_bullets
+		}
+
+		icon = GFX_focus_MEX_feminicide_problem
+
+		x = 1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			base = 90
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MEX_feminicide_reforms_tt
+			unlock_decision_tooltip = MEX_legislative_reforms
+			hidden_effect = {
+				set_country_flag = MEX_feminicide_reforms_started
+			}
+
+		}
+	}
+
+	focus = {
+		id = MEX_olimipia_law
+		relative_position_id = MEX_hugs_not_bullets
+
+		prerequisite = {
+			focus = MEX_feminicide_reforms
+		}
+
+		icon = GFX_focus_MEX_olimpia_law
+
+		x = 1
+		y = 2
+		cost = 6
+
+		ai_will_do = {
+			base = 90
+		}
+
+		available = {
+			has_country_flag = MEX_olimpia_law_pushed
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MEX_olimpia_tt
+			hidden_effect = {
+				set_country_flag = MEX_feminist_appeased
+			}
+
+		}
+	}
+
+	focus = {
+		id = MEX_save_the_youth
+		relative_position_id = MEX_hugs_not_bullets
+
+		prerequisite = {
+			focus = MEX_hugs_not_bullets
+		}
+
+		icon = GFX_focus_MEX_save_the_youth
+
+		x = -1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			base = 90
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MEX_save_the_youth_tt
+			swap_ideas = {
+				add_idea = MEX_hugs_not_bullets_2
+				remove_idea = MEX_hugs_not_bullets_1
+			}
+
+			
+		}
+	}
+
+	focus = {
+		id = MEX_fight_narcoculture
+		relative_position_id = MEX_hugs_not_bullets
+
+		prerequisite = {
+			focus = MEX_hugs_not_bullets
+		}
+
+		icon = GFX_focus_MEX_fight_narcoculture
+
+		x = -1
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			base = 90
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MEX_fight_narcoculture_tt
+			swap_ideas = {
+				add_idea = MEX_hugs_not_bullets_3
+				remove_idea = MEX_hugs_not_bullets_2
+			}
+			
+		}
+	}
+
+	focus = {
+		id = MEX_new_cartel_war
+		relative_position_id = MEX_hugs_not_bullets
+
+		prerequisite = {
+			focus = MEX_end_hugs
+		}
+
+		icon = GFX_focus_MEX_new_cartel_war 
+
+		x = 3
+		y = 1
+		cost = 6
+
+		ai_will_do = {
+			base = 90
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MEX_war_against_cartels_2
+				remove_idea = MEX_war_against_cartels_1
+			}
+
+			
+		}
+
+
+	}
+
+	focus = {
+		id = MEX_militarized_security
+		relative_position_id = MEX_hugs_not_bullets
+
+		prerequisite = {
+			focus = MEX_end_hugs
+		}
+
+		icon = GFX_focus_MEX_militarized_security
+
+		x = 3
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			base = 90
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MEX_war_against_cartels_3
+				remove_idea = MEX_war_against_cartels_2
+			}
+
+			swap_ideas = {
+				add_idea = low_supervision
+				remove_idea = medium_supervision
+			}
+
+			
+
+			custom_effect_tooltip = MEX_militarized_security_tt
+
+
+		}
+
+
+	}
+	
+	
+
+#
+### BIENESTAR PROGRAMS
+###########################################################################
+
+	focus = {
+		id = MEX_bienestar_programs
+		relative_position_id = MEX_together_doing_history
+
+		prerequisite = {
+			focus = MEX_together_doing_history
+		}
+
+		icon = GFX_focus_MEX_wellbeing_programs
+		x = 5
+		y = 1
+		cost = 3
+		ai_will_do = {
+			base = 40
+		}
+		available = {
+
+		}
+		completion_reward = {
+			add_stability = 0.025
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.04
+			}
+
+			custom_effect_tooltip = MEX_bienestar_programs_tt
+		}
+	} 
+
+	focus = {
+		id = MEX_benito_scholarships
+		relative_position_id = MEX_bienestar_programs
+
+		prerequisite = {
+			focus = MEX_bienestar_programs
+		}
+
+		icon = GFX_focus_MEX_universal_scholarships
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 40
+		}
+		available = {
+
+		}
+		completion_reward = {
+			set_temp_variable = {
+				var = academic_development_var_temp
+				value = 0.08
+			}
+			add_academic_development = yes
+
+			add_political_power = 20
+
+			# add_research_slot = 1
+
+			swap_ideas = {
+				remove_idea = medium_education
+				add_idea = high_education
+			}
+
+			unlock_decision_tooltip = MEX_benito_juarez_scholarships
+		}
+	} 
+
+	focus = {
+		id = MEX_youth_building_future
+		relative_position_id = MEX_bienestar_programs
+
+		prerequisite = {
+			focus = MEX_bienestar_programs
+		}
+
+		icon = GFX_focus_MEX_jovenes_construyendo_futuro
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 40
+		}
+		available = {
+
+		}
+		completion_reward = {
+			set_temp_variable = {
+				var = industrial_development_var_temp
+				value = 0.08
+			}
+			add_industrial_development = yes
+
+			add_political_power = 20
+
+			unlock_decision_tooltip = MEX_youth_building_the_future
+
+			every_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_island_state = no
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 5
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+	focus = {
+		id = MEX_sowing_life
+		relative_position_id = MEX_bienestar_programs
+
+		prerequisite = {
+			focus = MEX_bienestar_programs
+		}
+
+		icon = GFX_focus_MEX_sowing_life
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 40
+		}
+		available = {
+
+		}
+		completion_reward = {
+			set_temp_variable = {
+				var = farming_development_var_temp
+				value = 0.10
+			}
+			add_farming_development = yes
+
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.05
+			}
+			add_poverty_development = yes
+
+			add_political_power = 25	
+
+			unlock_decision_tooltip = MEX_sowing_life_program
+
+			every_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_island_state = no
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 8
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+	focus = {
+		id = MEX_pensions_old_age
+		relative_position_id = MEX_bienestar_programs
+
+		prerequisite = {
+			focus = MEX_bienestar_programs
+		}
+
+		icon = GFX_focus_MEX_old_age_pensions 
+		x = -1
+		y = 2
+		cost = 5
+		ai_will_do = {
+			base = 40
+		}
+		available = {
+
+		}
+		completion_reward = {
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.010
+			}
+			add_poverty_development = yes
+
+			set_temp_variable = {
+				var = society_development_var_temp
+				value = 0.010
+			}
+			add_society_development = yes
+
+			add_political_power = 50	
+
+			unlock_decision_tooltip = MEX_pension_expansion
+		}
+	} 
+
+	focus = {
+		id = MEX_working_mothers
+		relative_position_id = MEX_bienestar_programs
+
+		prerequisite = {
+			focus = MEX_bienestar_programs
+		}
+
+		icon = GFX_focus_MEX_working_mothers
+		x = 1
+		y = 2
+		cost = 5
+		ai_will_do = {
+			base = 40
+		}
+		available = {
+
+		}
+		completion_reward = {
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.04
+			}
+			add_poverty_development = yes
+
+			set_temp_variable = {
+				var = society_development_var_temp
+				value = 0.08
+			}
+			add_society_development = yes
+
+			if = {
+				limit = {
+					has_active_mission = MEX_feminist_protest_mission
+				}
+				add_days_mission_timeout = {
+				mission = MEX_feminist_protest_mission
+				days = 30
+			}
+			}
+
+			unlock_decision_tooltip = MEX_working_mothers_program
+		}
+	} 
+	
+}

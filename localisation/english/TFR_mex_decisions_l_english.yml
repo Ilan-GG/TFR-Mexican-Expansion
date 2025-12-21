@@ -1,0 +1,21 @@
+﻿l_english:
+
+ MEX_mexican_struggle_category: "Mexico in 21st Century"
+ MEX_mexican_struggle_category_desc: "Epic Description"
+ 
+ MEX_covid_worsening: "COVID-19 Cases Increasing"
+ MEX_business_adaptations: "Adapt Business to the COVID World"
+ MEX_deploy_vaccines: "Launch Final Vaccine Campaign"
+ MEX_feminist_protest_mission: "Feminist organize Nationwide Protest"
+ MEX_legislative_reforms: "Start Legislative Reforms"
+ MEX_push_olimpia_law: "Push Olimpia's Law into Federal Congress"
+ MEX_benito_juarez_scholarships: "Benito Juarez Scholarships"
+ MEX_youth_building_the_future: "Youth Building the Future"
+ MEX_sowing_life_program: "Sowing Life"
+ MEX_pension_expansion: "Pensions for the Well-being of Older Adults"
+ MEX_working_mothers_program: "Support for the Well-being of Single and Working Mothers"
+
+ ### Custom Tooltip ###
+
+ MEX_covid_is_over_tt: "We will put an end to the §RCOVID pandemic§! and return to §Gnormal life§!."
+ MEX_feminist_protests_tt: "\nThe §VAnger§! of the people is palpable, we must do something with the §RProblem§!."

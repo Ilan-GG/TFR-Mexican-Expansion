@@ -1,0 +1,45 @@
+spriteTypes = {
+	
+	SpriteType = {
+		name = "GFX_idea_MEX_national_census"
+		texturefile = "gfx/interface/ideas/MEX/MEX_national_census.png"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_MEX_pemex"
+		texturefile = "gfx/interface/ideas/MEX/MEX_pemex.png"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_MEX_cartel_presence_controlled"
+		texturefile = "gfx/interface/ideas/MEX/MEX_cartel_presence_controlled.png"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_MEX_cartel_presence_major"
+		texturefile = "gfx/interface/ideas/MEX/MEX_cartel_presence_major.png"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_MEX_cartel_presence_severe"
+		texturefile = "gfx/interface/ideas/MEX/MEX_cartel_presence_severe.png"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_MEX_cartel_presence_critical"
+		texturefile = "gfx/interface/ideas/MEX/MEX_cartel_presence_critical.png"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_MEX_oil"
+		texturefile = "gfx/interface/ideas/MEX/MEX_oil.png"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_MEX_amlo_revolution"
+		texturefile = "gfx/interface/ideas/MEX/MEX_amlo_revolution.png"
+	}
+
+	# MEX_amlo_revolution
+
+}

@@ -1,0 +1,18 @@
+spriteTypes = {
+	
+	SpriteType = {
+		name = "GFX_report_event_MEX_fourth_transformation"
+		texturefile = "gfx/interface/event_pictures/MEX/MEX_fourth_tranformation.png"
+	}
+
+	SpriteType = {
+		name = "GFX_report_event_MEX_dawn_of_a_century"
+		texturefile = "gfx/interface/event_pictures/MEX/MEX_dawn_of_a_century.png"
+	}
+
+	#SpriteType = {
+	#	name = "GFX_report_event_defender_20"
+	#	texturefile = "gfx/event_pictures/defender_20.png"
+	#}
+
+}

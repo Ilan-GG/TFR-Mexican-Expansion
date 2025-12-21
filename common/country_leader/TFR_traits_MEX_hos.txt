@@ -1,0 +1,26 @@
+leader_traits = {
+
+	#hos_president_japan = {
+	#	random = no
+	#	stability_factor = 0.05
+	#	army_core_defence_factor = 0.05
+	#	defensive_war_stability_factor = 0.1
+	#	offensive_war_stability_factor = 0.1
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}	
+
+	MEX_hos_cabecita_de_algodon = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		stability_factor = 0.05
+		social_democrat_drift = 0.05
+	}
+
+
+}

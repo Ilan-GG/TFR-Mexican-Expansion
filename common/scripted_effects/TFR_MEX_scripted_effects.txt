@@ -1,0 +1,122 @@
+MEX_worsen_pandemic = {
+	if = {
+		limit = {
+			has_idea = MEX_covid_initial
+		}
+		swap_ideas = {
+			remove_idea = MEX_covid_initial
+			add_idea = MEX_covid_uncontrolled
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = MEX_covid_uncontrolled
+		}
+		swap_ideas = {
+			remove_idea = MEX_covid_uncontrolled
+			add_idea = MEX_covid_massive
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = MEX_covid_massive
+		}
+		swap_ideas = {
+			remove_idea = MEX_covid_massive
+			add_idea = MEX_covid_unstoppable
+		}
+	}
+}
+
+MEX_worsen_cartel_presence = {
+	if = {
+		limit = {
+			has_idea = MEX_cartel_presence_controlled
+		}
+		swap_ideas = {
+			remove_idea = MEX_cartel_presence_controlled
+			add_idea = MEX_cartel_presence_major
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = MEX_cartel_presence_major
+		}
+		swap_ideas = {
+			remove_idea = MEX_cartel_presence_major
+			add_idea = MEX_cartel_presence_severe
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = MEX_cartel_presence_severe
+		}
+		swap_ideas = {
+			remove_idea = MEX_cartel_presence_severe
+			add_idea = MEX_cartel_presence_critical
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = MEX_cartel_presence_critical
+		}
+		swap_ideas = {
+			remove_idea = MEX_cartel_presence_critical
+			add_idea = MEX_cartel_presence_catastrophical
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = MEX_cartel_presence_catastrophical
+		}
+		swap_ideas = {
+			remove_idea = MEX_cartel_presence_catastrophical
+			add_idea = MEX_cartel_presence_total
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = MEX_cartel_presence_total
+		}
+		add_stability = -0.20
+	}
+}
+
+MEX_worsen_refugee_crisis = {
+	if = {
+		limit = {
+			has_idea = MEX_american_refugee_waves
+		}
+		swap_ideas = {
+			remove_idea = MEX_american_refugee_waves
+			add_idea = MEX_american_refugee_waves_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = MEX_protected_american_refugee_waves
+		}
+		swap_ideas = {
+			remove_idea = MEX_protected_american_refugee_waves
+			add_idea = MEX_protected_american_refugee_waves_2
+		}
+	}
+}
+
+MEX_protect_refugees = {
+	if = {
+		limit = {
+			has_idea = MEX_american_refugee_waves_2
+		}
+		swap_ideas = {
+			remove_idea = MEX_american_refugee_waves_2
+			add_idea = MEX_protected_american_refugee_waves_2
+		}
+	}
+	else = {
+		swap_ideas = {
+			remove_idea = MEX_american_refugee_waves
+			add_idea = MEX_protected_american_refugee_waves
+		}
+	}
+}
