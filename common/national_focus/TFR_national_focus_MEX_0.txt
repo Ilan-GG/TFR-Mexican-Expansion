@@ -61,8 +61,15 @@ focus_tree = {
 		}
 
 		icon = GFX_focus_MEX_together_doing_history
-		x = -3
+		x = 0
 		y = 1
+		offset = {
+			x = 0
+			y = 0
+			trigger = {
+				has_country_flag = MEX_sided_with_amlo
+			}
+		}
 		cost = 5
 		ai_will_do = {
 			base = 40
@@ -99,7 +106,7 @@ focus_tree = {
 		}
 
 		icon = GFX_focus_MEX_against_amlo 
-		x = 3
+		x = 2
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -318,7 +325,7 @@ focus_tree = {
 		}
 		icon = GFX_focus_MEX_vaccine_campaign
 
-		x = 0
+		x = 1
 		y = 4
 		cost = 6
 
@@ -351,7 +358,7 @@ focus_tree = {
 		icon = GFX_focus_MEX_covid_economics
 
 		x = -1
-		y = 5
+		y = 4
 		cost = 5
 
 		ai_will_do = {
@@ -427,8 +434,11 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = { MEX_hugs_not_bullets_1 }
-
+			
+			swap_ideas = {
+				add_idea = MEX_hugs_not_bullets_1
+				remove_idea = MEX_security_problem
+			}
 			swap_ideas = {
 				add_idea = low_police
 				remove_idea = medium_police
@@ -452,12 +462,6 @@ focus_tree = {
 			focus = MEX_hugs_not_bullets
 		}
 
-		mutually_exclusive = {
-			
-		}
-
-		# icon = 
-
 		x = 2
 		y = 0
 		cost = 5
@@ -471,7 +475,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = { MEX_war_against_cartels_1 }
+			swap_ideas = {
+				add_idea = MEX_war_against_cartels_1
+				remove_idea = MEX_security_problem
+			}
 
 			swap_ideas = {
 				add_idea = high_police

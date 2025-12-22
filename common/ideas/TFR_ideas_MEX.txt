@@ -684,6 +684,26 @@ ideas = {
 			}
 		}
 
+		MEX_security_problem = {
+			# picture = 
+			traits = { ZZZ_blank_idea_trait } 
+
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.25
+				stability_weekly_factor = -0.001
+				monthly_population = -0.10
+				society_development_monthly = -0.02
+			}
+		}
+
 		MEX_hugs_not_bullets_1 = {
 			# picture =
 			traits = { ZZZ_blank_idea_trait } 
@@ -697,14 +717,10 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = -0.10
-				stability_weekly_factor = 0.001
-
-				society_development_monthly = 0.02
-
-				battalion_upkeep_factor = 0.15
-				aircraft_upkeep_factor = 0.1
-				ship_upkeep_factor = 0.1
+				stability_factor = -0.20
+				stability_weekly_factor = 0.000
+				monthly_population = -0.075
+				society_development_monthly = -0.01
 			}
 		}
 		MEX_hugs_not_bullets_2 = {
@@ -720,17 +736,12 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = -0.05
-				stability_weekly_factor = 0.002
-
-				society_development_monthly = 0.03
-				academic_development_monthly = 0.02
-
+				stability_factor = -0.125
+				stability_weekly_factor = 0.001
+				monthly_population = -0.025
+				society_development_monthly = -0.005
+				academic_development_monthly = 0.01
 				personal_expense_factor = 0.05
-
-				battalion_upkeep_factor = 0.20
-				aircraft_upkeep_factor = 0.1
-				ship_upkeep_factor = 0.1
 			}
 		}
 		MEX_hugs_not_bullets_3 = {
@@ -746,20 +757,16 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = -0.05
-				stability_weekly_factor = 0.003
-
-				society_development_monthly = 0.04
+				stability_factor = -0.025
+				stability_weekly_factor = 0.002
+				monthly_population = -0.02
+				society_development_monthly = 0.01
 				academic_development_monthly = 0.02
 
 				production_speed_industrial_complex_factor = 0.10
 				political_power_factor = 0.25
 
 				personal_expense_factor = 0.10
-
-				battalion_upkeep_factor = 0.20
-				aircraft_upkeep_factor = 0.1
-				ship_upkeep_factor = 0.1
 			}
 		}
 
@@ -776,16 +783,12 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = -0.15
-				
-				stability_weekly_factor = 0.002
-				war_support_weekly_factor = 0.002
-
-				military_development_monthly = 0.05
-
-				battalion_upkeep_factor = 0.2
-				aircraft_upkeep_factor = 0.1
-				ship_upkeep_factor = 0.1
+				stability_factor = -0.25
+				stability_weekly_factor = 0.001
+				war_support_weekly_factor = 0.001
+				monthly_population = -0.125
+				society_development_monthly = -0.025
+				military_development_monthly = 0.025
 			}
 		}
 		MEX_war_against_cartels_2 = {
@@ -801,16 +804,14 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = -0.10
-
-				military_development_monthly = 0.08
-
-				stability_weekly_factor = 0.005
+				stability_factor = -0.25
+				stability_weekly_factor = 0.003
 				war_support_weekly_factor = 0.002
+				monthly_population = -0.15
+				society_development_monthly = -0.03
+				military_development_monthly = 0.025
 
-				battalion_upkeep_factor = 0.25
-				aircraft_upkeep_factor = 0.15
-				ship_upkeep_factor = 0.15
+				battalion_upkeep_factor = 0.10
 			}
 		}
 		MEX_war_against_cartels_3 = {
@@ -826,20 +827,17 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = -0.10
-
-				military_development_monthly = 0.08
-				society_development_monthly = -0.02
+				stability_factor = -0.30
+				stability_weekly_factor = 0.005
+				war_support_weekly_factor = 0.0025
+				monthly_population = -0.18
+				society_development_monthly = -0.03
+				military_development_monthly = 0.05
 
 				industrial_capacity_factory = 0.10
 				production_speed_arms_factory_factor = 0.10
 
-				stability_weekly_factor = 0.005
-				war_support_weekly_factor = 0.003
-
-				battalion_upkeep_factor = 0.30
-				aircraft_upkeep_factor = 0.20
-				ship_upkeep_factor = 0.20
+				battalion_upkeep_factor = 0.20
 			}
 		}
 

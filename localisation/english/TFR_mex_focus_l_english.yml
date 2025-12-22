@@ -5,6 +5,8 @@
 #############################################
  MEX_fourth_transformation: "The Fourth Transformation"
  MEX_fourth_transformation_desc: ""
+ MEX_together_doing_history: "§dTogether Doing History§!"
+ MEX_together_doing_history_desc: ""
  
  MEX_covid_response: "The §RCOVID-19§! Pandemic"
  MEX_covid_response_desc: ""
@@ -54,9 +56,6 @@
  MEX_pensions_old_age_desc: ""
  MEX_working_mothers: "Support Single Mothers"
  MEX_working_mothers_desc: ""
-
- MEX_together_doing_history: "§dTogether Doing History§!"
- MEX_together_doing_history_desc: ""
 
 
  MEX_against_amlo: "§YIN DEVELOPMENT§!"

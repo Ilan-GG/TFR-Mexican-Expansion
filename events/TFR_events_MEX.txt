@@ -606,6 +606,10 @@ country_event = {
 	option = {
 		name = mexico.100.a
 		complete_national_focus = MEX_together_doing_history
+		hidden_effect = {
+			set_country_flag = MEX_sided_with_amlo
+			mark_focus_tree_layout_dirty = yes
+		}
 	}
 	option = {
 		name = mexico.100.b

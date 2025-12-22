@@ -156,6 +156,7 @@
 		low_conscription
 		MEX_idea_pemex
 		MEX_cartel_presence_major
+		MEX_security_problem
 	}
 
 	add_dynamic_modifier = {
