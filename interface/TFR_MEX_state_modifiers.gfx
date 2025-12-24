@@ -1,0 +1,8 @@
+spriteTypes = {
+	
+	SpriteType = {
+		name = "GFX_modifiers_MEX_ezln_cells"
+		texturefile = "gfx/interface/state_modifiers/MEX/MEX_ezln_modifier.png"
+	}
+
+}

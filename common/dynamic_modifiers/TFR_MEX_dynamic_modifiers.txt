@@ -50,3 +50,21 @@ MEX_the_last_revolution = {
 	}
 	
 }
+
+#
+### State Modifiers
+#########################################################################
+
+MEX_ezln_autonomous_regions = {
+	icon = GFX_modifiers_MEX_ezln_cells
+	enable = {
+		NOT = {
+			has_country_flag = MEX_ezln_activation
+		}
+	}
+	recruitable_population_factor = -0.5
+	local_building_slots_factor = -0.25
+	state_resources_factor = -0.25
+	state_production_speed_buildings_factor = -0.25
+	# MONTHLY_POPULATION = -0.5
+}

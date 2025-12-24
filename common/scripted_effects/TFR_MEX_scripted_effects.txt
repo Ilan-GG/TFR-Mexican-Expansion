@@ -120,3 +120,11 @@ MEX_protect_refugees = {
 		}
 	}
 }
+
+MEX_chiapas_ezln_cells = {
+	475 = {
+		add_dynamic_modifier = {
+			modifier = MEX_ezln_autonomous_regions
+		}
+	}
+}

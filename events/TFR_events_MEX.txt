@@ -622,7 +622,7 @@ country_event = {
 	id = mexico.101
 	title = mexico.101.t
 	desc = mexico.101.d
-	# picture = 
+	picture = GFX_report_event_MEX_covid_picture 
 	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = {
@@ -648,7 +648,7 @@ country_event = {
 	id = mexico.102
 	title = mexico.102.t
 	desc = mexico.102.d
-	# picture = 
+	picture = GFX_report_event_MEX_ingrid_escamilla_protests
 	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = {
@@ -673,7 +673,7 @@ country_event = {
 	id = mexico.103
 	title = mexico.103.t
 	desc = mexico.103.d
-	# picture =
+	picture = GFX_report_event_MEX_oil_crisis
 	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = {
@@ -694,7 +694,7 @@ country_event = {
 	id = mexico.104
 	title = mexico.104.t
 	desc = mexico.104.d
-	# picture =
+	picture = GFX_report_event_MEX_inegi_census
 	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = {
@@ -722,6 +722,23 @@ country_event = {
 	}
 	option = {
 		name = mexico.105.a
+	}
+}
+
+# EZLN in Chiapas
+country_event = { 
+	id = mexico.106
+	title = mexico.106.t
+	desc = mexico.106.d
+	picture = GFX_report_event_MEX_ezln_cells
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = MEX
+	}
+	option = {
+		name = mexico.106.a
+		MEX_chiapas_ezln_cells = yes
 	}
 }
 
@@ -803,7 +820,7 @@ country_event = {
 	id = mexico.122
 	title = mexico.122.t
 	desc = mexico.122.d
-	# picture =
+	picture = GFX_report_event_MEX_hell_over_earth
 	fire_only_once = yes
 	is_triggered_only = yes
 	trigger = {
@@ -834,6 +851,7 @@ country_event = {
 	id = mexico.123
 	title = mexico.123.t
 	desc = mexico.123.d
+	picture = GFX_report_event_MEX_missing_crisis
 
 	fire_only_once = yes
 	is_triggered_only = yes

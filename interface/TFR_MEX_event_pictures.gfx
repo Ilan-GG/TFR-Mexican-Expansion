@@ -10,6 +10,41 @@ spriteTypes = {
 		texturefile = "gfx/interface/event_pictures/MEX/MEX_dawn_of_a_century.png"
 	}
 
+	SpriteType = {
+		name = "GFX_report_event_MEX_ingrid_escamilla_protests"
+		texturefile = "gfx/interface/event_pictures/MEX/MEX_ingrid_escamilla_protests.png"
+	}
+
+	SpriteType = {
+		name = "GFX_report_event_MEX_covid_picture"
+		texturefile = "gfx/interface/event_pictures/MEX/MEX_covid_picture.png"
+	}
+
+	SpriteType = {
+		name = "GFX_report_event_MEX_oil_crisis"
+		texturefile = "gfx/interface/event_pictures/MEX/MEX_oil_crisis.png"
+	}
+
+	SpriteType = {
+		name = "GFX_report_event_MEX_inegi_census"
+		texturefile = "gfx/interface/event_pictures/MEX/MEX_inegi_census.png"
+	}
+
+	SpriteType = {
+		name = "GFX_report_event_MEX_ezln_cells"
+		texturefile = "gfx/interface/event_pictures/MEX/MEX_zapatista_cell.png"
+	}
+
+	SpriteType = {
+		name = "GFX_report_event_MEX_hell_over_earth"
+		texturefile = "gfx/interface/event_pictures/MEX/MEX_hell_over_earth.png"
+	}
+
+	SpriteType = {
+		name = "GFX_report_event_MEX_missing_crisis"
+		texturefile = "gfx/interface/event_pictures/MEX/MEX_missing_crisis.png"
+	}
+
 	#SpriteType = {
 	#	name = "GFX_report_event_defender_20"
 	#	texturefile = "gfx/event_pictures/defender_20.png"

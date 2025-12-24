@@ -304,3 +304,8 @@ country_event = {
 	id = mexico.105
 	days = 522
 }
+
+country_event = {
+	id = mexico.106
+	days = 37
+}
